@@ -57,6 +57,7 @@ app.include_router(meta.router, tags = ["Meta"])
 app.mount("/about", StaticFiles(directory = "static/about", html = True), name = "static")
 app.mount("/roadmap", StaticFiles(directory = "static/roadmap", html = True), name = "static")
 app.mount("/qrcode", StaticFiles(directory = "static/qrcode", html = True), name = "static")
+app.mount("/v2", StaticFiles(directory = "static/v2", html = False), name = "static")
 app.mount("/test-password-manager-form", StaticFiles(directory = "static/password-manager", html = True), name = "static")
 
 @app.middleware("http")
