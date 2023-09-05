@@ -21,10 +21,10 @@ COPY img/ /app/img
 
 WORKDIR /app
 
-EXPOSE 8888/tcp
+EXPOSE 8000/tcp
 
-ENV PORT=8888
+ENV PORT=8000
 
-HEALTHCHECK --interval=1m --timeout=3s CMD curl -f http://localhost:8888/anything || exit 1
+HEALTHCHECK --interval=1m --timeout=3s CMD curl -f http://localhost:8000/anything || exit 1
 
 ENTRYPOINT [ "/entrypoint.sh" ]
