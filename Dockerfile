@@ -1,4 +1,3 @@
-
 FROM python:3.10
 
 RUN python -m pip install --upgrade pip
@@ -22,10 +21,10 @@ COPY img/ /app/img
 
 WORKDIR /app
 
-EXPOSE 80/tcp
+EXPOSE 8888/tcp
 
-ENV PORT=80
+ENV PORT=8888
+
+HEALTHCHECK --interval=1m --timeout=3s CMD curl -f http://localhost:8888/anything || exit 1
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-
-
